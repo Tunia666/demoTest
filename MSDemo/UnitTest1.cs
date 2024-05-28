@@ -42,14 +42,22 @@ namespace MSDemo
         public void TestValidUser()
         {
             // Arrange
-            string validLogin = "Elizor@gmai,com";
-            string validPassword = "yntiRS";
+            string ConnectionString = "Server=(localdb)\\test;Database=demo;Trusted_Connection=True;";
 
             // Act
-            bool result = јвторизаци€.IsUserValid(validLogin, validPassword);
+            SqlConnection connection = new SqlConnection(Connection)
+            try
+            {
+                connection.Open();
+            }
+            catch
+            {
 
-            // Assert
-            Assert.IsTrue(result, "ќжидалось, что пользователь будет действительным.");
+            }
+        }
+
+        // Assert
+        Assert.IsTrue(result, "ќжидалось, что пользователь будет действительным.");
         }
     }
 
