@@ -35,6 +35,22 @@ namespace MSDemo
             Assert.IsFalse(result, "ќжидалось, что пользователь будет недействительным.");
         }
     }
-    
-    
-}
+    [TestClass]
+    public class UnitSQL
+    {
+        [TestMethod]
+        public void TestValidUser()
+        {
+            // Arrange
+            string validLogin = "Elizor@gmai,com";
+            string validPassword = "yntiRS";
+
+            // Act
+            bool result = јвторизаци€.IsUserValid(validLogin, validPassword);
+
+            // Assert
+            Assert.IsTrue(result, "ќжидалось, что пользователь будет действительным.");
+        }
+    }
+
+    }
